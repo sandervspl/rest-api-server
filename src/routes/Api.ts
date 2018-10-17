@@ -5,10 +5,9 @@ import ApiController from '../controllers/Api';
 class Api extends Route<ApiController> {
   constructor() {
     super(new ApiController());
-    this.routes();
   }
 
-  private routes(): void {
+  protected $initRoutes(): void {
     const ctlr = this.controller;
 
     // All /api routes

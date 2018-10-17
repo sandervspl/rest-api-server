@@ -4,16 +4,15 @@ export default (data) => {
   const config = {
     columns: {
       0: {
-        alignment: 'left',
-        width: 25,
+        width: 15,
       },
       1: {
-        width: 15,
+        width: 25,
       },
     },
   };
 
-  const headers = ['ROUTE', 'METHOD'];
+  const headers = ['Method', 'Endpoint'];
   const _table = [headers, ...data];
 
   console.info(table(_table, config));

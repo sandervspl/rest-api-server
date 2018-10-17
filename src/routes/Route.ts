@@ -7,9 +7,14 @@ export default class Route<C> {
   private routeController: C;
   private expressRouter: express.Router;
 
-  constructor(Controller: any) {
+  constructor(
+    protected routeRoot: string,
+    Controller: any
+  ) {
     this.expressRouter = express.Router();
     this.routeController = Controller;
+
+    this.$initRoutes();
   }
 
   public get router(): express.Router {
@@ -20,6 +25,10 @@ export default class Route<C> {
     return this.routeController;
   }
 
+  // $initRoute() should be used in routes to define endpoints
+  // tslint:disable-next-line
+  protected $initRoutes() {}
+
   protected registerRoutes(registers: i.RouteRegister[]) {
     const table = [];
 
@@ -27,8 +36,8 @@ export default class Route<C> {
       const methods = [register.middleware, register.callback].filter(m => m != null);
 
       table.push([
-        `${Config.rootUrl}${register.route}`,
         register.method.toUpperCase(),
+        `${Config.rootUrl}${this.routeRoot}${register.route}`,
       ]);
 
       this.router
