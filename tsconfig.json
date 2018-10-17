@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "pretty": true,
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "module": "commonjs",
+        "target": "es2015",
+        "baseUrl": "src",
+        "paths": {
+            "app/*": ["app/*"],
+            "config/*": ["app/config/*"],
+            "controllers/*": ["app/controllers/*"],
+            "entities/*": ["app/entity/*"],
+            "helpers/*": ["app/helpers/*"],
+            "routes/*": ["app/routes/*"]
+        },
+        "typeRoots": ["node_modules/@types"],
+        "lib": ["dom", "es2017"]
+    }
+}
