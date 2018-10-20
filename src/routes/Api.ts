@@ -4,7 +4,7 @@ import ApiController from '../controllers/Api';
 
 class Api extends Route<ApiController> {
   constructor() {
-    super(new ApiController());
+    super('', new ApiController());
   }
 
   protected $initRoutes(): void {

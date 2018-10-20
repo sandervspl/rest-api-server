@@ -1,14 +1,14 @@
 {
     "name": "rest-api-server",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "rest api server boilerplate",
     "engines": {
         "node": "8.3.0"
     },
     "main": "src/Server.js",
     "scripts": {
-        "dev": "NODE_ENV=development nodemon",
-        "build": "npm run clean && npm run build:js",
+        "dev": "NODE_ENV=development ts-node-dev --respawn --transpileOnly src/Server.ts",
+        "build": "npm run clean && npm run build:types && npm run build:js",
         "build:types": "tsc",
         "build:js": "webpack --config ./webpack.config.ts --progress --color --display-error-details",
         "start": "babel-node dist/index.js",
@@ -42,10 +42,10 @@
         "babel-plugin-module-resolver": "^3.1.1",
         "babel-preset-env": "^1.6.1",
         "cookie-parser": "^1.4.3",
-        "nodemon": "^1.17.2",
         "rimraf": "^2.6.2",
         "table": "^5.1.0",
         "ts-node": "^7.0.1",
+        "ts-node-dev": "^1.0.0-pre.30",
         "tslint": "^5.11.0",
         "tslint-config-airbnb": "^5.11.0",
         "tslint-eslint-rules": "^5.4.0",
