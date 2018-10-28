@@ -6,7 +6,6 @@ import * as cors from 'cors';
 import Config from 'config/apiconfig';
 import * as routes from 'routes';
 import secret from 'config/secret';
-import Route from 'routes/Route';
 
 class Server {
   private app: express.Application;
@@ -29,8 +28,8 @@ class Server {
     this.app.use(cookieParser());
 
     // Init routes
-    Object.values<Route<any>>(routes).forEach(api => (
-      this.app.use(Config.rootUrl, api.router)
+    Object.values(routes).forEach(api => (
+      this.app.use(`${Config.rootUrl}${api.routeRoot}`, api.router)
     ));
 
     // 404 route

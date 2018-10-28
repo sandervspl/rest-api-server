@@ -2,9 +2,6 @@
     "name": "rest-api-server",
     "version": "1.2.0",
     "description": "rest api server boilerplate",
-    "engines": {
-        "node": "8.3.0"
-    },
     "main": "src/Server.js",
     "scripts": {
         "dev": "NODE_ENV=development ts-node-dev --respawn --transpileOnly -r tsconfig-paths/register src/Server.ts",

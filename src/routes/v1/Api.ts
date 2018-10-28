@@ -1,27 +1,30 @@
 import ApiController from 'controllers/v1/Api';
 import Route from 'routes/Route';
-// import userRoute from './User';
+import { userRoute } from './User';
 
-export class Api extends Route<ApiController> {
+export class V1 extends Route<ApiController> {
+  public static a = 1;
+
   constructor() {
     super('api/v1', new ApiController());
-  }
 
-  protected $initRoutes(): void {
-    const ctlr = this.controller;
-
-    // All /api routes
+    // All /api/v1 routes
     this.registerRoutes([
       {
         route: '/',
-        callback: ctlr.test,
+        callback: this.controller.test,
         method: 'get',
       },
     ]);
 
     // Sub routes
-    // this.router.use('/user', userRoute.router);
+    this.registerSubroutes([
+      {
+        route: '/user',
+        router: userRoute.router,
+      },
+    ]);
   }
 }
 
-export const v1 = new Api();
+export const v1 = new V1();

@@ -1,33 +1,27 @@
 import * as i from 'types';
 import * as express from 'express';
 import { generateRoutesTable } from 'services';
-import Config from 'config/apiconfig';
+import { V1 } from './v1/Api';
 
 export default class Route<C> {
   private routeController: C;
-  private expressRouter: express.Router;
+  private _router: express.Router;
 
   constructor(
-    protected routeRoot: string,
+    public routeRoot: string,
     Controller: any
   ) {
-    this.expressRouter = express.Router();
+    this._router = express.Router();
     this.routeController = Controller;
-
-    this.$initRoutes();
   }
 
-  public get router(): express.Router {
-    return this.expressRouter;
+  public get router() {
+    return this._router;
   }
 
-  public get controller(): C {
+  public get controller() {
     return this.routeController;
   }
-
-  // $initRoute() should be used in routes to define endpoints
-  // tslint:disable-next-line
-  protected $initRoutes() {}
 
   protected registerRoutes(registers: i.RouteRegister[]) {
     const table = [];
@@ -37,7 +31,7 @@ export default class Route<C> {
 
       table.push([
         register.method.toUpperCase(),
-        `${Config.rootUrl}${this.routeRoot}${register.route}`,
+        this.routeRoot + register.route,
       ]);
 
       this.router
@@ -45,6 +39,12 @@ export default class Route<C> {
         [register.method](...methods);
     });
 
-    generateRoutesTable(table);
+    // generateRoutesTable(table);
+  }
+
+  protected registerSubroutes(registers: i.SubrouteRegister[]) {
+    registers.forEach((register) => {
+      this.router.use(register.route, register.router);
+    });
   }
 }
