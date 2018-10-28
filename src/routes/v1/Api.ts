@@ -3,8 +3,6 @@ import Route from 'routes/Route';
 import { userRoute } from './User';
 
 export class V1 extends Route<ApiController> {
-  public static a = 1;
-
   constructor() {
     super('api/v1', new ApiController());
 

@@ -1,18 +1,14 @@
 import * as i from 'types';
 import * as express from 'express';
-import { generateRoutesTable } from 'services';
-import { V1 } from './v1/Api';
 
 export default class Route<C> {
-  private routeController: C;
   private _router: express.Router;
 
   constructor(
     public routeRoot: string,
-    Controller: any
+    private _controller: C
   ) {
     this._router = express.Router();
-    this.routeController = Controller;
   }
 
   public get router() {
@@ -20,7 +16,7 @@ export default class Route<C> {
   }
 
   public get controller() {
-    return this.routeController;
+    return this._controller;
   }
 
   protected registerRoutes(registers: i.RouteRegister[]) {
@@ -38,8 +34,6 @@ export default class Route<C> {
         .route(register.route)
         [register.method](...methods);
     });
-
-    // generateRoutesTable(table);
   }
 
   protected registerSubroutes(registers: i.SubrouteRegister[]) {
