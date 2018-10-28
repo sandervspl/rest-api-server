@@ -6,6 +6,7 @@ import * as cors from 'cors';
 import Config from 'config/apiconfig';
 import * as routes from 'routes';
 import secret from 'config/secret';
+import { routesTable } from './services';
 
 class Server {
   private app: express.Application;
@@ -31,6 +32,8 @@ class Server {
     Object.values(routes).forEach(api => (
       this.app.use(`${Config.rootUrl}${api.routeRoot}`, api.router)
     ));
+
+    routesTable.generate(this.app);
 
     // 404 route
     this.app.use((req, res) => {
