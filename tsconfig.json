@@ -12,12 +12,12 @@
         "target": "es2015",
         "baseUrl": "src",
         "paths": {
-            "app/*": ["app/*"],
-            "config/*": ["app/config/*"],
-            "controllers/*": ["app/controllers/*"],
-            "entities/*": ["app/entity/*"],
-            "helpers/*": ["app/helpers/*"],
-            "routes/*": ["app/routes/*"]
+            "config/*": ["config/*"],
+            "controllers/*": ["controllers/*"],
+            "entities/*": ["entities/*"],
+            "routes/*": ["routes/*"],
+            "services/*": ["services/*"],
+            "types/*": ["types/*"]
         },
         "typeRoots": ["node_modules/@types"],
         "lib": ["dom", "es2017"]

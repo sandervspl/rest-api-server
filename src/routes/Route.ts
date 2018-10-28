@@ -1,7 +1,7 @@
-import * as i from '../types';
+import * as i from 'types';
 import * as express from 'express';
-import routesTable from './createRoutesTable';
-import Config from '../config/apiconfig';
+import { generateRoutesTable } from 'services';
+import Config from 'config/apiconfig';
 
 export default class Route<C> {
   private routeController: C;
@@ -45,6 +45,6 @@ export default class Route<C> {
         [register.method](...methods);
     });
 
-    routesTable(table);
+    generateRoutesTable(table);
   }
 }

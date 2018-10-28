@@ -1,7 +1,7 @@
 import * as express from 'express';
-import * as i from '../types';
+import * as i from 'types';
 
-export default (req: i.AuthRequest, res: express.Response, next: express.NextFunction) => {
+export const jwtVerify = (req: i.AuthRequest, res: express.Response, next: express.NextFunction) => {
   const bearerHeader = req.headers.authorization as string;
 
   if (bearerHeader) {

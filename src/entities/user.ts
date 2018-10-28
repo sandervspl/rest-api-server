@@ -1,12 +1,10 @@
 import { Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
-class User {
+export class User {
   @PrimaryColumn({
     type: 'varchar',
     unique: true,
   })
   public id: string;
 }
-
-export default User;

@@ -7,6 +7,7 @@
     "node_modules/tslint-eslint-rules/dist/rules"
   ],
   "rules": {
+    "no-var-requires": false,
     "ordered-imports": false,
     "object-literal-sort-keys": false,
     "consistent-return": false,

@@ -1,8 +1,8 @@
 import { createConnection, Connection } from 'typeorm';
-import secret from './config/secret';
-import ormconfig from './config/ormconfig';
-import * as entities from './entities';
-import { Repositories } from './types';
+import secret from 'config/secret';
+import ormconfig from 'config/ormconfig';
+import * as entities from 'entities';
+import { Repositories } from 'types';
 
 class Database {
   public connection: Connection;

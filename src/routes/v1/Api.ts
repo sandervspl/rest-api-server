@@ -1,10 +1,10 @@
-import Route from './Route';
-import ApiController from '../controllers/Api';
+import ApiController from 'controllers/v1/Api';
+import Route from 'routes/Route';
 // import userRoute from './User';
 
-class Api extends Route<ApiController> {
+export class Api extends Route<ApiController> {
   constructor() {
-    super('', new ApiController());
+    super('api/v1', new ApiController());
   }
 
   protected $initRoutes(): void {
@@ -24,4 +24,4 @@ class Api extends Route<ApiController> {
   }
 }
 
-export default new Api();
+export const v1 = new Api();

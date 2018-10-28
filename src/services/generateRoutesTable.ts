@@ -1,6 +1,6 @@
 import { table } from 'table';
 
-export default (data) => {
+export const generateRoutesTable = (data: any) => {
   const config = {
     columns: {
       0: {

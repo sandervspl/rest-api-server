@@ -1,6 +1,7 @@
 import * as webpack from 'webpack';
-import * as path from 'path';
-import * as nodeExternals from 'webpack-node-externals';
+const path = require('path');
+const nodeExternals = require('webpack-node-externals');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const config: webpack.Configuration = {
   cache: true,
@@ -29,6 +30,9 @@ const config: webpack.Configuration = {
   },
   resolve: {
     extensions: ['.js', '.ts'],
+    plugins: [
+      new TsconfigPathsPlugin(),
+    ],
   },
 };
 

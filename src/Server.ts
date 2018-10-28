@@ -3,9 +3,10 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as cors from 'cors';
-import Config from './config/apiconfig';
-import Api from './routes/Api';
-import secret from './config/secret';
+import Config from 'config/apiconfig';
+import * as routes from 'routes';
+import secret from 'config/secret';
+import Route from 'routes/Route';
 
 class Server {
   private app: express.Application;
@@ -28,7 +29,9 @@ class Server {
     this.app.use(cookieParser());
 
     // Init routes
-    this.app.use(Config.rootUrl, Api.router);
+    Object.values<Route<any>>(routes).forEach(api => (
+      this.app.use(Config.rootUrl, api.router)
+    ));
 
     // 404 route
     this.app.use((req, res) => {

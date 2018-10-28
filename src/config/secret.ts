@@ -1,4 +1,4 @@
-import * as i from '../types';
+import * as i from 'types';
 
 /*
     ADD THIS FILE TO GITIGNORE WHEN PUSHING TO GIT
