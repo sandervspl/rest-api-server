@@ -6,6 +6,7 @@
         "noImplicitAny": false,
         "removeComments": true,
         "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "module": "commonjs",

@@ -1,5 +1,5 @@
 import * as i from 'types';
-import * as express from 'express';
+import express from 'express';
 
 export default class Route<C> {
   private _router: express.Router;

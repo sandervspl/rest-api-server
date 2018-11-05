@@ -1,7 +1,7 @@
-import * as express from 'express';
+import { Request, Response } from 'express';
 
 export class UserController {
-  public test = (req: express.Request, res: express.Response) => {
+  public test = (req: Request, res: Response) => {
     res.status(200).send('Subroute successfully installed!');
   }
 }

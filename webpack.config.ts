@@ -1,7 +1,7 @@
-import * as webpack from 'webpack';
-const path = require('path');
-const nodeExternals = require('webpack-node-externals');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+import webpack from 'webpack';
+import path from 'path';
+import nodeExternals from 'webpack-node-externals';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 const config: webpack.Configuration = {
   cache: true,
