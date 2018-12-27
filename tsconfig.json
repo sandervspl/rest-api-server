@@ -16,7 +16,7 @@
             "config/*": ["config/*"],
             "controllers/*": ["controllers/*"],
             "entities/*": ["entities/*"],
-            "routes/*": ["routes/*"],
+            "helpers/*": ["helpers/*"],
             "services/*": ["services/*"],
             "types/*": ["types/*"]
         },

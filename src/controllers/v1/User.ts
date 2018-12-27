@@ -1,9 +1,12 @@
-import { Request, Response } from 'express';
+import { Controller, Get, Post, Body } from '@nestjs/common';
+import UserService from 'services/v1/User';
 
-export class UserController {
-  public test = (req: Request, res: Response) => {
-    res.status(200).send('Subroute successfully installed!');
+@Controller('user')
+export default class UserController {
+  constructor(private readonly userService: UserService) {}
+
+  @Get()
+  private async findAll() {
+    return this.userService.findAll();
   }
 }
-
-export default UserController;

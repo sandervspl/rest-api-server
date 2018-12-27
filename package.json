@@ -14,12 +14,13 @@
     "author": "Sander Vispoel <contact@sandervispoel.com>",
     "license": "MIT",
     "dependencies": {
-        "body-parser": "^1.18.3",
+        "@nestjs/common": "5.5.0",
+        "@nestjs/core": "5.5.0",
         "cors": "^2.8.4",
-        "express": "^4.16.4",
         "jsonwebtoken": "^8.3.0",
         "mysql2": "^1.6.1",
         "reflect-metadata": "^0.1.12",
+        "rxjs": "6.3.3",
         "typeorm": "^0.2.7"
     },
     "devDependencies": {
@@ -38,9 +39,7 @@
         "babel-loader": "^8.0.4",
         "babel-plugin-module-resolver": "^3.1.1",
         "babel-preset-env": "^1.6.1",
-        "cookie-parser": "^1.4.3",
         "rimraf": "^2.6.2",
-        "table": "^5.1.0",
         "ts-node": "^7.0.1",
         "ts-node-dev": "^1.0.0-pre.30",
         "tsconfig-paths": "^3.6.0",
