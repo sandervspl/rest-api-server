@@ -10,12 +10,12 @@ class Secret implements i.SecretInfo {
   */
   private database: i.DatabaseConnectDetails = {
     host: 'localhost',
-    port: 3306,
-    user: 'USER',
-    password: 'PASSWORD',
-    database: 'DATABASE',
+    port: 8889,
+    user: 'root',
+    password: 'root',
+    database: 'test',
   };
-  private jwtSecret = '<ADD RANDOM STRING HERE>';
+  private jwtSecret = 'rgt24r3-qefwrgeth3y524twefs-dbteh35wy24t3qrw';
 
   public getDatabaseInfo(): i.DatabaseConnectDetails {
     return this.database;
