@@ -1,5 +1,7 @@
+/* tslint:disable only-arrow-functions space-before-function-paren */
+import Knex from 'knex';
 
-exports.up = function(knex, Promise) {
+exports.up = function(knex: Knex, Promise: Promise<any>) {
   return knex.schema
     .dropTable('users')
     .createTable('users', (table) => {
@@ -10,6 +12,6 @@ exports.up = function(knex, Promise) {
     });
 };
 
-exports.down = function(knex, Promise) {
+exports.down = function(knex: Knex, Promise: Promise<any>) {
   return knex.schema.dropTable('users');
 };

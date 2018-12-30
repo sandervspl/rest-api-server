@@ -17,7 +17,7 @@ async function bootstrap() {
 
   await app.listen(Config.port, () => {
     // Init Database
-    require('./Database');
+    require('./db/connection');
 
     const db = secret.getDatabaseInfo();
     console.info(`API server started on ${db.host}:${Config.port}`);

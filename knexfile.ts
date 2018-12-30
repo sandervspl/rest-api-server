@@ -1,3 +1,6 @@
+import path from 'path';
+const BASE_PATH = path.join(__dirname, 'src', 'server', 'db');
+
 module.exports = {
   development: {
     client: 'mysql',
@@ -7,13 +10,10 @@ module.exports = {
       password: 'root',
       port:     8889,
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: path.join(BASE_PATH, 'migrations'),
+      tableName: 'knex_migrations',
+    },
   },
 
   staging: {
@@ -24,13 +24,10 @@ module.exports = {
       password: 'root',
       port:     8889,
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: path.join(BASE_PATH, 'migrations'),
+      tableName: 'knex_migrations',
+    },
   },
 
   production: {
@@ -41,12 +38,9 @@ module.exports = {
       password: 'root',
       port:     8889,
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
+      directory: path.join(BASE_PATH, 'migrations'),
+      tableName: 'knex_migrations',
+    },
+  },
 };

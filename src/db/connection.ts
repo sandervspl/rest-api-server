@@ -1,8 +1,9 @@
 import knex from 'knex';
-// import secret from 'config/secret';
 import dbconfig from 'config/dbconfig';
 
-class Database {
+// TODO: Add custom knex thingy with type checking (table names etc.)
+
+class DatabaseConnection {
   public connection: knex;
 
   constructor() {
@@ -15,6 +16,6 @@ class Database {
   }
 }
 
-const d = new Database();
+const d = new DatabaseConnection();
 
 export default d.connection;

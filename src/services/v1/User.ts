@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import db from 'Database';
+import db from 'db/connection';
 
 @Injectable()
 export default class UserService {
