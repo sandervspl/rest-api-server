@@ -6,5 +6,4 @@ import UserService from 'services/v1/User';
   controllers: [UserController],
   providers: [UserService],
 })
-
 export default class UserModule {}
