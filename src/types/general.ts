@@ -1,7 +1,7 @@
-import { Request } from 'express';
+import * as i from 'types';
 import { Repository } from 'typeorm';
 
-export interface AuthRequest extends Request {
+export interface AuthRequest extends i.Request {
   token: string;
 }
 

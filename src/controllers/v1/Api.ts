@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
+import * as i from 'types';
 
 export class ApiController {
-  public test = (req: Request, res: Response) => {
+  public test: i.RequestHandler = (req, res) => {
     res.status(200).send('Successfully installed!');
   }
 }
