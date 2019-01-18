@@ -9,9 +9,6 @@ class Database {
   public repos: Repositories = {};
 
   constructor() {
-    // init database connection
-    const info = secret.getDatabaseInfo();
-
     // tslint:disable no-console
     // open connection to database
     createConnection({

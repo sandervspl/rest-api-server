@@ -8,6 +8,6 @@ export interface DatabaseConnectDetails {
 
 // Interface for the class that holds secret info and is ignored by GIT
 export interface SecretInfo {
-  getDatabaseInfo: () => DatabaseConnectDetails;
-  getJwtSecret: () => string;
+  databaseInfo: DatabaseConnectDetails;
+  jwtSecret: string;
 }

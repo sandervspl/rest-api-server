@@ -8,22 +8,15 @@ class Secret implements i.SecretInfo {
   /*
       UPDATE THE DATABASE SETTINGS
   */
-  private database: i.DatabaseConnectDetails = {
+  public readonly databaseInfo = {
     host: 'localhost',
     port: 3306,
     user: 'USER',
     password: 'PASSWORD',
     database: 'DATABASE',
   };
-  private jwtSecret = '<ADD RANDOM STRING HERE>';
 
-  public getDatabaseInfo(): i.DatabaseConnectDetails {
-    return this.database;
-  }
-
-  public getJwtSecret(): string {
-    return this.jwtSecret;
-  }
+  public readonly jwtSecret = '<ADD RANDOM STRING HERE>';
 }
 
 const s = new Secret();

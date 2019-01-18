@@ -19,7 +19,7 @@ async function bootstrap() {
     // Init Database
     require('./Database');
 
-    const db = secret.getDatabaseInfo();
+    const db = secret.databaseInfo;
     console.info(`API server started on ${db.host}:${Config.port}`);
   });
 }

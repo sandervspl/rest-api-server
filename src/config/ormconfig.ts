@@ -1,6 +1,6 @@
 import secret from './secret';
 
-const db = secret.getDatabaseInfo();
+const db = secret.databaseInfo;
 
 export default {
   type: 'mysql',
