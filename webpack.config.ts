@@ -22,9 +22,6 @@ const config: webpack.Configuration = {
         test: /\.ts$/,
         include: [path.resolve(__dirname, 'src')],
         loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env', '@babel/preset-typescript'],
-        },
       },
     ],
   },
