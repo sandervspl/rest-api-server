@@ -16,9 +16,6 @@ async function bootstrap() {
   app.disable('x-powered-by');
 
   await app.listen(Config.port, () => {
-    // Init Database
-    require('./Database');
-
     const db = secret.databaseInfo;
     console.info(`API server started on ${db.host}:${Config.port}`);
   });
