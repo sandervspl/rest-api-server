@@ -1,4 +1,4 @@
-import { Entity, PrimaryColumn } from 'typeorm';
+import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 @Entity()
 export class User {
@@ -7,4 +7,10 @@ export class User {
     unique: true,
   })
   public id: string;
+
+  @Column({
+    type: 'varchar',
+    unique: true,
+  })
+  public username: string;
 }

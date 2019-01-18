@@ -1,8 +1,14 @@
 import { Injectable } from '@nestjs/common';
+import { Service } from 'services/Service';
+import * as entities from 'entities';
 
 @Injectable()
-export default class UserService {
+export default class UserService extends Service<entities.User> {
+  constructor() {
+    super(entities.User);
+  }
+
   public findAll() {
-    return 'Hello world!';
+    return this.repo.find();
   }
 }
