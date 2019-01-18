@@ -16,7 +16,7 @@ Start development server
 $ npm run dev
 ```
 
-Go to `{host}:{port}/api/v1/` on an app like Postman and you should be good to go.
+Go to `localhost:8080/user` on an app like Postman to see if it all works.
 
 ## Deployment
 Create a build for production, this will add a `/dist` folder to the root with all bundles.  
