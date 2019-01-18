@@ -13,7 +13,7 @@ const config: webpack.Configuration = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'index.js',
+    filename: 'server.js',
     libraryTarget: 'commonjs2',
   },
   module: {
