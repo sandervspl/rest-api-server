@@ -1,16 +1,14 @@
 {
     "name": "rest-api-server",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "description": "rest api server boilerplate",
     "main": "src/Server.js",
     "scripts": {
-        "dev": "NODE_ENV=development ts-node-dev --respawn --transpileOnly -r tsconfig-paths/register src/Server.ts",
-        "build": "npm run clean && npm run build:types && npm run build:js",
-        "build:types": "tsc",
-        "build:js": "webpack --config ./webpack.config.ts --progress --color --display-error-details",
-        "start": "babel-node dist/server.js",
+        "dev": "ts-node-dev --respawn --transpileOnly -r tsconfig-paths/register src/Server.ts",
+        "build": "npm run clean && tsc",
+        "start": "node -r ./tsconfig-paths-bootstrap.js dist/Server.js",
         "clean": "rimraf dist/",
-        "lint": "tslint --project ./tsconfig.json"
+        "lint": "tslint --project tsconfig.json"
     },
     "author": "Sander Vispoel <contact@sandervispoel.com>",
     "license": "MIT",

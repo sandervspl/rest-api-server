@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import cors from 'cors';
+import * as cors from 'cors';
 import Config from 'config/apiconfig';
 import secret from 'config/secret';
 

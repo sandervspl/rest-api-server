@@ -1,17 +1,12 @@
 {
     "compilerOptions": {
-        "outDir": "./dist/",
-        "pretty": true,
-        "sourceMap": true,
-        "noImplicitAny": false,
-        "removeComments": true,
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "skipLibCheck": true,
+        "outDir": "./dist",
         "module": "commonjs",
-        "target": "esnext",
+        "target": "es6",
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
         "baseUrl": "src",
         "paths": {
             "config/*": ["config/*"],
@@ -19,9 +14,11 @@
             "entities/*": ["entities/*"],
             "helpers/*": ["helpers/*"],
             "services/*": ["services/*"],
+            "modules/*": ["modules/*"],
+            "database/*": ["Database.ts"],
             "types/*": ["types/*"]
         },
-        "typeRoots": ["node_modules/@types"],
-        "lib": ["dom", "es2017"]
-    }
+        "lib": ["esnext"]
+    },
+    "exclude": ["node_modules"]
 }
