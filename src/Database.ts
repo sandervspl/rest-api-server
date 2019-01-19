@@ -1,5 +1,4 @@
 import { createConnection, Connection } from 'typeorm';
-import secret from 'config/secret';
 import ormconfig from 'config/ormconfig';
 import * as entities from 'entities';
 import { Repositories } from 'types';
@@ -9,7 +8,7 @@ class Database {
   public repos: Repositories = {};
 
   constructor() {
-    // tslint:disable no-console
+    /* tslint:disable no-console */
     // open connection to database
     createConnection({
       ...ormconfig,
@@ -29,8 +28,8 @@ class Database {
           };
         }, {});
       })
-      .catch(err => console.log(err));
-    // tslint:enable
+      .catch((err) => console.log(err));
+      /* tslint:enable */
   }
 }
 

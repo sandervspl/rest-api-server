@@ -11,9 +11,9 @@ class Secret implements i.SecretInfo {
   public readonly databaseInfo = {
     host: 'localhost',
     port: 3306,
-    user: 'USER',
-    password: 'PASSWORD',
-    database: 'DATABASE',
+    user: 'root',
+    password: 'administrator',
+    database: 'test',
   };
 
   public readonly jwtSecret = '<ADD RANDOM STRING HERE>';

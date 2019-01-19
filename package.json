@@ -9,7 +9,8 @@
         "build:types": "tsc",
         "build:js": "webpack --config ./webpack.config.ts --progress --color --display-error-details",
         "start": "babel-node dist/server.js",
-        "clean": "rimraf dist/"
+        "clean": "rimraf dist/",
+        "lint": "tslint --project ./tsconfig.json"
     },
     "author": "Sander Vispoel <contact@sandervispoel.com>",
     "license": "MIT",
