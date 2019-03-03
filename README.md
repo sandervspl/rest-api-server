@@ -1,6 +1,9 @@
 # REST API Server Boilerplate
 
 ## Getting started
+To quickly install the boilerplate you can run `npx create-sandervspl api <folder name>`.
+
+Manually:
 ```
 $ git clone https://github.com/sandervspl/rest-api-server
 ```
